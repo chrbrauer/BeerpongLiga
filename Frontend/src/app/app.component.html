@@ -1,0 +1,50 @@
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="80px"
+    alt="Angular Logo"
+    src="assets/pictures/LogoBackground.png"
+    >
+  <h5>Beerpong Liga WB20/200</h5>
+  <div class="spacer"></div>
+
+  <nav ngbNav #nav="ngbNav" class="nav-tabs navbar navbar-expand-lg navbar-light ">
+
+
+   <ng-container ngbNavItem>
+      <a ngbNavLink><span class="tab">Ergbenisse</span></a>
+      <ng-template ngbNavContent>
+        <app-results></app-results>
+      </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink><span class="tab">Spielplan</span></a>
+      <ng-template ngbNavContent>
+        <app-plan></app-plan>
+      </ng-template>
+    </ng-container>
+ <ng-container ngbNavItem>
+      <a ngbNavLink><span class="tab">Tabelle</span></a>
+      <ng-template ngbNavContent>
+        <app-table></app-table>
+      </ng-template>
+    </ng-container>
+ <ng-container ngbNavItem>
+      <a ngbNavLink><span class="tab">Regelwerk</span></a>
+      <ng-template ngbNavContent>
+        <app-rules></app-rules>
+      </ng-template>
+    </ng-container>
+
+
+  </nav>
+  </div>
+
+
+<div class="content" role="main">
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  <!-- Footer -->
+
+</div>
+
