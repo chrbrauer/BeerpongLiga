@@ -1,0 +1,19 @@
+{
+  "games": [
+    {
+      "date": "02.10.2021",
+      "heim": {
+        "spieler_1": "Dominic Weller",
+        "spieler_2": "Valentin Trinkaus",
+        "team": "2.OG"
+      },
+      "gast": {
+        "spieler_1": "Christoph Brauer",
+        "spieler_2": "Niels Große Kleimann",
+        "team": "EG"
+      },
+      "score_heim": 10,
+      "score_gast": 8
+    }
+  ]
+}

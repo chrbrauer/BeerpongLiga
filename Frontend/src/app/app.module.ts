@@ -7,19 +7,24 @@ import {RouterModule} from "@angular/router";
 import {appRoutes} from "./routes";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from './table/table.component';
-import { PlanComponent } from './plan/plan.component';
 import { ResultsComponent } from './results/results.component';
+import { ScoreBannerComponent } from './results/score-banner/score-banner.component';
+import {HttpClientModule} from "@angular/common/http";
+import { TeamsComponent } from './table/teams/teams.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     RulesComponent,
     TableComponent,
-    PlanComponent,
-    ResultsComponent
+    ResultsComponent,
+    ScoreBannerComponent,
+    TeamsComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
     NgbModule
   ],

@@ -1,0 +1,38 @@
+<div class="row bg-white align-items-center mt-5 ml-0 mr-0 py-4 match-entry shadow rounded">
+  <div class="col-md-4 col-lg-4 mb-4 mb-lg-0">
+
+    <div class="text-center text-lg-left">
+      <div class="d-block d-lg-flex align-items-center">
+        <div class="image image-small text-center mb-3 mb-lg-0 mr-lg-3">
+          <!--<img src="images/img_1_sq.jpg" alt="Image" class="img-fluid">-->
+        </div>
+        <div class="text">
+          <h3 class="h5 mb-0 text-black">{{game.heim.spieler_1}}</h3>
+          <h3 class="h5 mb-0 text-black">{{game.heim.spieler_2}}</h3>
+          <span class="text-uppercase small country">{{game.heim.teamname}}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-4 col-lg-4 text-center mb-4 mb-lg-0">
+    <div class="d-inline-block">
+      <p class="mb-0"><small class="text-uppercase small country">{{datum}}</small></p>
+      <div class="bg-black py-2 px-4 mb-2 text-white d-inline-block rounded"><span class="h3">{{game.score_heim}}:{{game.score_gast}}</span></div>
+    </div>
+  </div>
+  <div class="col-md-4 col-lg-4 text-center text-lg-right">
+    <div class="">
+      <div class="d-block d-lg-flex align-items-center">
+        <div class="image image-small ml-lg-3 mb-3 mb-lg-0 order-2">
+         <!-- <img src="images/img_4_sq.jpg" alt="Image" class="img-fluid">-->
+        </div>
+        <div class="text order-1 w-100">
+          <h3 class="h5 mb-0 text-black">{{game.gast.spieler_1}}</h3>
+          <h3 class="h5 mb-0 text-black">{{game.gast.spieler_2}}</h3>
+          <span class="text-uppercase small country">{{game.gast.teamname}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
