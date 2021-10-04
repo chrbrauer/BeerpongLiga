@@ -9,6 +9,8 @@ var ctrlGame = require('../controllers/Game.controller');
 
 router.get('/getTeams', ctrlGame.getTeams);
 router.get('/getGames', ctrlGame.getGames);
-
-
+router.post('/postTeam', ctrlGame.postTeam);
+router.post('/postGame', ctrlGame.postGame);
+router.put('/putResult', ctrlGame.putResult);
+router.put('/putPoints', ctrlGame.putPoints);
 module.exports = router;

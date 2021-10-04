@@ -5,6 +5,25 @@
 .tab:hover{
   color: #888888;
 }
+
+.tab2{
+  color: #24292e;
+  font-weight: bold;
+  margin: 2px;
+}
+.tab2.active{
+  border-color: transparent;
+}
+.tab2:hover{
+  color: deepskyblue;
+}
+.nav-tabs2 .nav-link {
+  display: block;
+  padding: 0 0;
+}
+.nav-tabs2{
+  border-bottom-color: transparent;
+}
 .nav-tabs .nav-link.active{
   background-color: transparent;
 }
@@ -267,39 +286,3 @@ footer a {
   margin-right: 4px;
 }
 
-svg#clouds {
-  position: fixed;
-  bottom: -160px;
-  left: -230px;
-  z-index: -10;
-  width: 1920px;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 767px) {
-  .card-container > *:not(.circle-link) ,
-  .terminal {
-    width: 100%;
-  }
-
-  .card:not(.highlight-card) {
-    height: 16px;
-    margin: 8px 0;
-  }
-
-  .card.highlight-card span {
-    margin-left: 72px;
-  }
-
-  svg#rocket-smoke {
-    right: 120px;
-    transform: rotate(-5deg);
-  }
-}
-
-@media screen and (max-width: 575px) {
-  svg#rocket-smoke {
-    display: none;
-    visibility: hidden;
-  }
-}

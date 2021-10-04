@@ -9,7 +9,7 @@ import {Game} from "../classes/game";
 })
 export class DataService {
 
-  private serverUrl = "http://localhost:3000";
+  private serverUrl = "http://85.214.68.249:3000";
 
   constructor(
     private http: HttpClient

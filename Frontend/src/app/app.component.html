@@ -9,7 +9,7 @@
   <h5>Beerpong Liga WB20/200</h5>
   <div class="spacer"></div>
 
-  <nav ngbNav #nav="ngbNav" class="nav-tabs navbar navbar-expand-lg navbar-light ">
+  <nav ngbNav #nav="ngbNav" class="nav-tabs navbar navbar-expand-lg navbar-light d-none d-md-flex">
 
 
    <ng-container ngbNavItem>
@@ -37,7 +37,30 @@
 
 
 <div class="content" role="main">
-  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  <nav ngbNav #nav2="ngbNav" class="nav-tabs2 navbar navbar-expand-lg navbar-light d-flex d-md-none">
+
+
+    <ng-container ngbNavItem>
+      <a ngbNavLink><span class="tab2">Spiele</span></a>
+      <ng-template ngbNavContent>
+        <app-results></app-results>
+      </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink><span class="tab2">Tabelle</span></a>
+      <ng-template ngbNavContent>
+        <app-table></app-table>
+      </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink><span class="tab2">Regelwerk</span></a>
+      <ng-template ngbNavContent>
+        <app-rules></app-rules>
+      </ng-template>
+    </ng-container>
+  </nav>
+  <div [ngbNavOutlet]="nav" class="mt-2 d-none d-md-block"></div>
+  <div [ngbNavOutlet]="nav2" class="mt-2 d-block d-md-none"></div>
   <!-- Footer -->
 
 </div>
