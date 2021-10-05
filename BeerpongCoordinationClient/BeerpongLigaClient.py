@@ -12,12 +12,11 @@ def getIDFromGame(partie, games):
     gast = ce[1]
     for i in games:
         if i['datum'] == datum and i['heim']['teamname'] == heim and i['gast']['teamname'] == gast:
-            return i['_id'], heim, gast
+            return i['_id'], i['heim'], i['gast']
 
 
 def encodeDatum(datum):
     return datum.split('.')[2] + '.' + datum.split('.')[1] + '.' + datum.split('.')[0]
-
 
 
 def createTeam():
@@ -71,15 +70,19 @@ def setResult():
     print("\n" + "Geben die Partie an:")
     partie = input()
     id, heim, gast = getIDFromGame(partie, games)
-    print("Geben sie die Anzahl der Treffer von " + heim + " ein:")
+    print("Geben sie die Anzahl der Treffer von " + heim['teamname'] + " ein:")
     score_heim = int(input())
-    print("Geben sie die Anzahl der Treffer von " + gast + " ein:")
+    print("Geben sie die Anzahl der Treffer von " + gast['teamname'] + " ein:")
     score_gast = int(input())
     PARAMS = {'_id': id, 'score_heim': score_heim, 'score_gast': score_gast}
+    elo_heim = heim['punkte']
+    elo_gast = gast['punkte']
     r = requests.put(url=(URL + '/putResult'), json=PARAMS)
     data = r.json()
     if data['status']:
-        calcPoints(heim, gast, score_heim, score_gast)
+        elo_heim_neu, elo_gast_neu = calcElo(score_heim, score_gast, elo_heim, elo_gast, 30)
+        setPoints(heim['teamname'], elo_heim_neu)
+        setPoints(gast['teamname'], elo_gast_neu)
         print('Spiel wurde erfolgreich erstellt!')
     else:
         print(data['message'])
@@ -92,11 +95,15 @@ def setPoints(Team, Punkte):
     return data['status']
 
 
-def calcPoints(heim, gast, score_heim, score_gast):
-    if (score_heim > score_gast):
-        setPoints(heim, 3)
-    else:
-        setPoints(gast, 3)
+def calcElo(score_heim, score_gast, elo_heim, elo_gast, k):
+    e_heim = 1 / (1 + 10 ** ((elo_gast - elo_heim) / 400))
+    e_gast = 1 / (1 + 10 ** ((elo_heim - elo_gast) / 400))
+
+    elo_heim_neu = round(elo_heim + k * ((score_heim - score_gast) - e_heim), 0)
+    elo_gast_neu = round(elo_gast + k * ((score_gast - score_heim) - e_gast), 0)
+
+    return int(elo_heim_neu), int(elo_gast_neu)
+
 
 def choose():
     print('Was möchten Sie tun?')

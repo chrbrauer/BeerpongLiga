@@ -6,7 +6,7 @@
     alt="Angular Logo"
     src="assets/pictures/LogoBackground.png"
     >
-  <h5>Beerpong Liga WB20/200</h5>
+  <h5>Bierpong Liga WB20/200</h5>
   <div class="spacer"></div>
 
   <nav ngbNav #nav="ngbNav" class="nav-tabs navbar navbar-expand-lg navbar-light d-none d-md-flex">
@@ -28,6 +28,18 @@
       <a ngbNavLink><span class="tab">Regelwerk</span></a>
       <ng-template ngbNavContent>
         <app-rules></app-rules>
+      </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink><span class="tab">Ligasystem</span></a>
+      <ng-template ngbNavContent>
+        <app-liga></app-liga>
+      </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink><span class="tab">Teilnahme</span></a>
+      <ng-template ngbNavContent>
+        <app-teilnahme></app-teilnahme>
       </ng-template>
     </ng-container>
 
@@ -56,6 +68,18 @@
       <a ngbNavLink><span class="tab2">Regelwerk</span></a>
       <ng-template ngbNavContent>
         <app-rules></app-rules>
+      </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink><span class="tab2">Ligasystem</span></a>
+      <ng-template ngbNavContent>
+        <app-liga></app-liga>
+      </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink><span class="tab2">Teilnahme</span></a>
+      <ng-template ngbNavContent>
+        <app-teilnahme></app-teilnahme>
       </ng-template>
     </ng-container>
   </nav>

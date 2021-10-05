@@ -71,7 +71,7 @@ module.exports.postTeam = (req, res) => {
     team.spieler_1 = req.body.spieler_1;
     team.spieler_2 = req.body.spieler_2;
     team.teamname = req.body.teamname;
-    team.punkte = 0;
+    team.punkte = 1500;
     team.save((err, doc) => {
         if (!err) {
             return res.status(200).json({status: true, element: doc});
@@ -142,7 +142,7 @@ module.exports.putPoints = (req, res) => {
             if (!team)
                 return res.status(404).json({status: false, message: 'Team nicht gefunden.'});
             else {
-                team.punkte += req.body.punkte
+                team.punkte = req.body.punkte
                 Team.updateOne({_id: team._id}, team, (err, doc) => {
                     if (!err)
                         res.status(200).json({status: true, message: 'Ergebnis konnte geändert werden'});

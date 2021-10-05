@@ -11,6 +11,8 @@ import { ResultsComponent } from './results/results.component';
 import { ScoreBannerComponent } from './results/score-banner/score-banner.component';
 import {HttpClientModule} from "@angular/common/http";
 import { TeamsComponent } from './table/teams/teams.component';
+import { LigaComponent } from './liga/liga.component';
+import { TeilnahmeComponent } from './teilnahme/teilnahme.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { TeamsComponent } from './table/teams/teams.component';
     TableComponent,
     ResultsComponent,
     ScoreBannerComponent,
-    TeamsComponent
+    TeamsComponent,
+    LigaComponent,
+    TeilnahmeComponent
   ],
   imports: [
     BrowserModule,

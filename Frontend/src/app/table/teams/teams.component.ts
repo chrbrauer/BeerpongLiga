@@ -12,11 +12,22 @@ export class TeamsComponent implements OnInit {
   team!: Team;
   @Input()
   pos!: number;
+  bg: string = "bg-white";
 
-  constructor() { }
+
+  constructor() {}
 
   ngOnInit(): void {
-    console.log(this.team)
+    if (this.pos == 1){
+      this.bg = "bg-gold";
+    }
+    if (this.pos == 2){
+      this.bg = "bg-silber";
+    }
+    if (this.pos == 3){
+      this.bg = "bg-bronze";
+    }
+
   }
 
 }
