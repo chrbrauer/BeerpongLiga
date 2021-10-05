@@ -20,6 +20,9 @@ var GameSchema = mongoose.Schema({
     },
     datum:{
         type: String,
+    },
+    season:{
+        type: Number,
     }
 });
 mongoose.model('Game', GameSchema);

@@ -8,7 +8,11 @@ var ctrlGame = require('../controllers/Game.controller');
  */
 
 router.get('/getTeams', ctrlGame.getTeams);
-router.get('/getGames', ctrlGame.getGames);
+router.get('/getTeamsBySeason', ctrlGame.getTeamsBySeason)
+router.post('/TeamToSeason', ctrlGame.TeamToSeason);
+router.get('/getGames', ctrlGame.getGamesBySeason);
+router.get('/getEloByID', ctrlGame.getElo)
+router.get('/getSeasons', ctrlGame.getSeasons);
 router.post('/postTeam', ctrlGame.postTeam);
 router.post('/postGame', ctrlGame.postGame);
 router.put('/putResult', ctrlGame.putResult);

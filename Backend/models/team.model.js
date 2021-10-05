@@ -16,10 +16,6 @@ var teamSchema = mongoose.Schema({
         type: String,
         required: 'Das Feld kann nicht leer sein',
         unique: true
-    },
-    punkte: {
-        type: Number,
-        default: 0
     }
 });
 

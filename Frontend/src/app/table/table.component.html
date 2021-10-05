@@ -1,3 +1,8 @@
-<h1 class="title">Tabelle</h1>
 
+<div class="title justify-content-center">
+  <h1>Tabelle</h1>
+  <select class="btn btn-light" id="dropdown" (change)="changeseason()">
+    <option *ngFor="let season of seasons"  value="{{season._id}}">{{season.name}}</option>
+  </select>
+</div>
 <app-teams *ngFor="let team of teams" [team]="team" [pos]="getPosition(team)"></app-teams>

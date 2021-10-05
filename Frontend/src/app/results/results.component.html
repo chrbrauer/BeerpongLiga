@@ -1,3 +1,9 @@
-<h1 class="title">Vergangene Spiele</h1>
 
+
+<div class="title justify-content-center">
+  <h1>Vergangene Spiele</h1>
+  <select class="btn btn-light" id="seasons" (change)="changeseason()">
+    <option *ngFor="let season of seasons"  value="{{season._id}}">{{season.name}}</option>
+  </select>
+</div>
 <app-score-banner class="" *ngFor="let game of games" [game]="game"></app-score-banner>

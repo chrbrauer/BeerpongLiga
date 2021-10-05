@@ -8,3 +8,5 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true,  useUnifiedTo
 
 require('./team.model');
 require('./game.model');
+require('./seasons.model');
+require('./seasonresults.model');
